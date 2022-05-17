@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1738
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migração", "Migração\Migração.csproj", "{3A0141D2-B4B3-4EE8-B430-AD4EA3D7C4DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A0141D2-B4B3-4EE8-B430-AD4EA3D7C4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0141D2-B4B3-4EE8-B430-AD4EA3D7C4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0141D2-B4B3-4EE8-B430-AD4EA3D7C4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0141D2-B4B3-4EE8-B430-AD4EA3D7C4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {136B5D9E-0DBF-484F-85BE-FC4B6B4252B8}
+	EndGlobalSection
+EndGlobal
