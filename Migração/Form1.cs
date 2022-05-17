@@ -108,7 +108,15 @@ namespace Migração
 
         private void cmdMover_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                File.Move(txtOrigem.Text, txtDestino.Text);
+                MessageBox.Show("Arquivo movido com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha: " + ex.Message);
+            }
         }
 
         private void cmdRenomear_Click(object sender, EventArgs e)
