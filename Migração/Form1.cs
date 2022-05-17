@@ -15,7 +15,7 @@ namespace Migração
     public partial class Migração : Form
     {
         string caminho = @"C:\";
-        int sdf = 654;
+
         public Migração()
         {
             InitializeComponent();
