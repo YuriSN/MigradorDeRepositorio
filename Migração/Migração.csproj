@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaixaDeDialogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaixaDeDialogo.Designer.cs">
+      <DependentUpon>CaixaDeDialogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CaixaDeDialogo.aa-DJ.resx">
+      <DependentUpon>CaixaDeDialogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaixaDeDialogo.aa.resx">
+      <DependentUpon>CaixaDeDialogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaixaDeDialogo.pt-BR.resx">
+      <DependentUpon>CaixaDeDialogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaixaDeDialogo.resx">
+      <DependentUpon>CaixaDeDialogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.pt-BR.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

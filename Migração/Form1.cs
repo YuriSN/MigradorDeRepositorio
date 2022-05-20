@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace Migração
 {
@@ -17,10 +18,14 @@ namespace Migração
     {
         string caminho = @"C:\";
 
+        public string Origem
+        {
+            set { txtOrigem.Text = value; }
+        }
+
         public Migração()
         {
             InitializeComponent();
-
         }
 
         private void Migração_Load(object sender, EventArgs e)
@@ -35,7 +40,7 @@ namespace Migração
 
         private void txtOrigem_EditValueChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void lblDestino_Click(object sender, EventArgs e)
@@ -48,9 +53,7 @@ namespace Migração
 
         }
 
-
         private void cmdCopiar_Click(object sender, EventArgs e)
-
         {
             
             if (txtOrigem.Text.Contains(".pdf") || txtOrigem.Text.Contains(".png") || txtOrigem.Text.Contains(".jpg") || txtOrigem.Text.Contains(".txt") || txtOrigem.Text.Contains(".doc") || txtOrigem.Text.Contains(".docx")
@@ -84,25 +87,19 @@ namespace Migração
                                 if (!File.Exists(newPath))
                                     break;
                             }
-
                             File.Copy(txtOrigem.Text, newPath, true);
-                            MessageBox.Show("Arquivo duplicado com sucesso!");
-
+                            MessageBox.Show("Arquivo duplicado com sucesso!", "Aviso.");
                         }
-
                     }
                     else
                     {
                         File.Copy(txtOrigem.Text, txtDestino.Text);
-                        MessageBox.Show("Arquivo cópiado com sucesso!");
+                        MessageBox.Show("Arquivo cópiado com sucesso!", "Aviso.");
 
                         txtDestino.Text = "";
                         ActiveControl = txtOrigem;
                     }
-
                 }
-
-
                 catch (Exception ex)
                 {
                     MessageBox.Show("Falha: " + ex.Message);
@@ -110,66 +107,61 @@ namespace Migração
             }
             else
                 CopiarPasta(txtOrigem.Text, txtDestino.Text, true);
-
         }
 
-         
-
-        //Criando Método copiar pasta:
+        //Criando método copiar pasta:
         private void CopiarPasta(string sourceDirName, string destDirName, bool copySubDirs)
         {
             { 
                 var dir = new DirectoryInfo(sourceDirName);
                 var dirs = dir.GetDirectories();
 
-                // If the source directory does not exist, throw an exception.
+                // Se o diretório de origem não existir, lance uma exceção.
                 if (!dir.Exists)
                 {
                     throw new DirectoryNotFoundException(
-                        "Source directory does not exist or could not be found: "
+                        "O diretório de origem não existe ou não foi encontrado: "
                         + sourceDirName);
                 }
 
-                // If the destination directory does not exist, create it.
+                // Se o diretório de destino não existir, crie-o.
                 if (!Directory.Exists(destDirName))
                 {
                     Directory.CreateDirectory(destDirName);
                 }
 
 
-                // Get the file contents of the directory to copy.
+                // Obtenha o conteúdo do arquivo do diretório a ser copiado.
                 var files = dir.GetFiles();
 
                 foreach (var file in files)
                 {
                     toolStripStatusLabel1.Text = Convert.ToString(file);
                     statusStrip1.Refresh();
-                    // Create the path to the new copy of the file.
+                    // Crie o caminho para a nova cópia do arquivo.
                     var temppath = Path.Combine(destDirName, file.Name);
                     Thread.Sleep(5);
 
-                    // Copy the file.
+                    // Copie o arquivo.
                     file.CopyTo(temppath, true);
                 }
 
-                // If copySubDirs is true, copy the subdirectories.
+                // Se copySubDirs for true, copie os subdiretórios.
                 if (!copySubDirs) return;
 
                 foreach (var subdir in dirs)
                 {
                     toolStripStatusLabel1.Text = Convert.ToString(subdir);
                     statusStrip1.Refresh();
-                    // Create the subdirectory.
+                    // Crie o subdiretório.
                     var temppath = Path.Combine(destDirName, subdir.Name);
                     Thread.Sleep(5);
 
-                    // Copy the subdirectories.
+                    // Copie os subdiretórios.
                     CopiarPasta(subdir.FullName, temppath, copySubDirs);
                 }
                 toolStripStatusLabel1.Text = "Pronto " + dirs.Count() + " subpastas copiadas!";
             }
-
-            
         }
 
         private void cmdMover_Click(object sender, EventArgs e)
@@ -177,14 +169,13 @@ namespace Migração
             try
             {
                 File.Move(txtOrigem.Text, txtDestino.Text);
-                MessageBox.Show("Arquivo movido com sucesso!");
+                MessageBox.Show("Arquivo movido com sucesso!", "Aviso.");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Falha: " + ex.Message);
             }
         }
-
 
         private void txtDestino_DoubleClick(object sender, EventArgs e)
         {
@@ -206,18 +197,44 @@ namespace Migração
 
         private void txtOrigem_DoubleClick(object sender, EventArgs e)
         {
+            this.Hide();
+            CaixaDeDialogo boxDialogue = new CaixaDeDialogo();
+            boxDialogue.ShowDialog();
+        }
 
-            //Caixa de diálogo:
-            using (var openFolder = new FolderBrowserDialog())
+        private void txtOrigem_Enter(object sender, EventArgs e)
+        {
+            if(txtOrigem.Text == "Dois cliques para abrir diretório")
             {
-                if (openFolder.ShowDialog() == DialogResult.OK)
-                    txtOrigem.Text = openFolder.SelectedPath;//Caminho da pasta selecionado
+                txtOrigem.Text = "";
+                txtOrigem.ForeColor = Color.Black;
             }
+        }
 
-            using (var openFile = new OpenFileDialog())
+        private void txtOrigem_Leave(object sender, EventArgs e)
+        {
+            if (txtOrigem.Text == "")
             {
-                if (openFile.ShowDialog() == DialogResult.OK)
-                    txtOrigem.Text = openFile.FileName;//Caminho do arquivo selecionado.
+                txtOrigem.Text = "Dois cliques para abrir diretório";
+                txtOrigem.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtDestino_Enter(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "Dois cliques para escolher diretório")
+            {
+                txtDestino.Text = "";
+                txtDestino.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtDestino_Leave(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "")
+            {
+                txtDestino.Text = "Dois cliques para escolher diretório";
+                txtDestino.ForeColor = Color.Silver;
             }
         }
     }

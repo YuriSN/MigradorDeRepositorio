@@ -44,98 +44,82 @@
             // 
             // lblOrigem
             // 
-            this.lblOrigem.Appearance.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lblOrigem, "lblOrigem");
+            this.lblOrigem.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("lblOrigem.Appearance.Font")));
             this.lblOrigem.Appearance.Options.UseFont = true;
-            this.lblOrigem.Location = new System.Drawing.Point(16, 30);
             this.lblOrigem.Name = "lblOrigem";
-            this.lblOrigem.Size = new System.Drawing.Size(40, 19);
-            this.lblOrigem.TabIndex = 0;
-            this.lblOrigem.Text = "Origem:";
             this.lblOrigem.Click += new System.EventHandler(this.lblOrigem_Click);
             // 
             // txtOrigem
             // 
-            this.txtOrigem.Location = new System.Drawing.Point(16, 51);
+            resources.ApplyResources(this.txtOrigem, "txtOrigem");
             this.txtOrigem.Name = "txtOrigem";
-            this.txtOrigem.Properties.Appearance.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrigem.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtOrigem.Properties.Appearance.Font")));
+            this.txtOrigem.Properties.Appearance.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtOrigem.Properties.Appearance.Options.UseFont = true;
+            this.txtOrigem.Properties.Appearance.Options.UseForeColor = true;
             this.txtOrigem.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtOrigem.Size = new System.Drawing.Size(326, 26);
-            this.txtOrigem.TabIndex = 1;
             this.txtOrigem.EditValueChanged += new System.EventHandler(this.txtOrigem_EditValueChanged);
             this.txtOrigem.DoubleClick += new System.EventHandler(this.txtOrigem_DoubleClick);
+            this.txtOrigem.Enter += new System.EventHandler(this.txtOrigem_Enter);
+            this.txtOrigem.Leave += new System.EventHandler(this.txtOrigem_Leave);
             // 
             // lblDestino
             // 
-            this.lblDestino.Appearance.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lblDestino, "lblDestino");
+            this.lblDestino.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("lblDestino.Appearance.Font")));
             this.lblDestino.Appearance.Options.UseFont = true;
-            this.lblDestino.Location = new System.Drawing.Point(364, 30);
             this.lblDestino.Name = "lblDestino";
-            this.lblDestino.Size = new System.Drawing.Size(39, 19);
-            this.lblDestino.TabIndex = 0;
-            this.lblDestino.Text = "Destino";
             this.lblDestino.Click += new System.EventHandler(this.lblDestino_Click);
             // 
             // txtDestino
             // 
-            this.txtDestino.Location = new System.Drawing.Point(364, 51);
+            resources.ApplyResources(this.txtDestino, "txtDestino");
             this.txtDestino.Name = "txtDestino";
-            this.txtDestino.Properties.Appearance.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDestino.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtDestino.Properties.Appearance.Font")));
+            this.txtDestino.Properties.Appearance.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtDestino.Properties.Appearance.Options.UseFont = true;
+            this.txtDestino.Properties.Appearance.Options.UseForeColor = true;
             this.txtDestino.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtDestino.Size = new System.Drawing.Size(326, 26);
-            this.txtDestino.TabIndex = 1;
             this.txtDestino.EditValueChanged += new System.EventHandler(this.txtDestino_EditValueChanged);
             this.txtDestino.DoubleClick += new System.EventHandler(this.txtDestino_DoubleClick);
+            this.txtDestino.Enter += new System.EventHandler(this.txtDestino_Enter);
+            this.txtDestino.Leave += new System.EventHandler(this.txtDestino_Leave);
             // 
             // cmdCopiar
             // 
-            this.cmdCopiar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmdCopiar.Appearance.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.cmdCopiar, "cmdCopiar");
+            this.cmdCopiar.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("cmdCopiar.Appearance.Font")));
             this.cmdCopiar.Appearance.Options.UseFont = true;
-            this.cmdCopiar.Location = new System.Drawing.Point(261, 95);
             this.cmdCopiar.Name = "cmdCopiar";
-            this.cmdCopiar.Size = new System.Drawing.Size(81, 26);
-            this.cmdCopiar.TabIndex = 2;
-            this.cmdCopiar.Text = "Copiar";
             this.cmdCopiar.Click += new System.EventHandler(this.cmdCopiar_Click);
             // 
             // cmdMover
             // 
-            this.cmdMover.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmdMover.Appearance.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.cmdMover, "cmdMover");
+            this.cmdMover.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("cmdMover.Appearance.Font")));
             this.cmdMover.Appearance.Options.UseFont = true;
-            this.cmdMover.Location = new System.Drawing.Point(364, 95);
             this.cmdMover.Name = "cmdMover";
-            this.cmdMover.Size = new System.Drawing.Size(81, 26);
-            this.cmdMover.TabIndex = 2;
-            this.cmdMover.Text = "Mover";
             this.cmdMover.Click += new System.EventHandler(this.cmdMover_Click);
             // 
             // statusStrip1
             // 
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(5, 138);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(217, 22);
-            this.statusStrip1.TabIndex = 3;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.AutoSize = false;
+            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(200, 17);
             // 
             // Migração
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(702, 162);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.cmdMover);
             this.Controls.Add(this.cmdCopiar);
@@ -143,10 +127,9 @@
             this.Controls.Add(this.txtOrigem);
             this.Controls.Add(this.lblDestino);
             this.Controls.Add(this.lblOrigem);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Migração";
-            this.Text = "Migração de Diretório";
             this.Load += new System.EventHandler(this.Migração_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtOrigem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDestino.Properties)).EndInit();
@@ -160,13 +143,13 @@
         #endregion
 
         private DevExpress.XtraEditors.LabelControl lblOrigem;
-        private DevExpress.XtraEditors.TextEdit txtOrigem;
         private DevExpress.XtraEditors.LabelControl lblDestino;
         private DevExpress.XtraEditors.TextEdit txtDestino;
         private DevExpress.XtraEditors.SimpleButton cmdCopiar;
         private DevExpress.XtraEditors.SimpleButton cmdMover;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private DevExpress.XtraEditors.TextEdit txtOrigem;
     }
 }
 
