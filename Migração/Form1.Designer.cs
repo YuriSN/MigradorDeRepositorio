@@ -44,9 +44,9 @@
             // 
             // lblOrigem
             // 
-            resources.ApplyResources(this.lblOrigem, "lblOrigem");
             this.lblOrigem.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("lblOrigem.Appearance.Font")));
             this.lblOrigem.Appearance.Options.UseFont = true;
+            resources.ApplyResources(this.lblOrigem, "lblOrigem");
             this.lblOrigem.Name = "lblOrigem";
             this.lblOrigem.Click += new System.EventHandler(this.lblOrigem_Click);
             // 
@@ -66,9 +66,9 @@
             // 
             // lblDestino
             // 
-            resources.ApplyResources(this.lblDestino, "lblDestino");
             this.lblDestino.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("lblDestino.Appearance.Font")));
             this.lblDestino.Appearance.Options.UseFont = true;
+            resources.ApplyResources(this.lblDestino, "lblDestino");
             this.lblDestino.Name = "lblDestino";
             this.lblDestino.Click += new System.EventHandler(this.lblDestino_Click);
             // 
@@ -104,16 +104,19 @@
             // 
             // statusStrip1
             // 
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
             this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // toolStripStatusLabel1
             // 
             resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // Migração
             // 

@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
+using PDFtoImage;
+using Spire.Pdf;
+
 
 namespace Migração
 {
@@ -53,9 +56,9 @@ namespace Migração
 
         }
 
+        #region Cópia pastas e subpastas
         private void cmdCopiar_Click(object sender, EventArgs e)
         {
-            
             if (txtOrigem.Text.Contains(".pdf") || txtOrigem.Text.Contains(".png") || txtOrigem.Text.Contains(".jpg") || txtOrigem.Text.Contains(".txt") || txtOrigem.Text.Contains(".doc") || txtOrigem.Text.Contains(".docx")
                  || txtOrigem.Text.Contains(".ptt") || txtOrigem.Text.Contains(".xls") || txtOrigem.Text.Contains(".rar") || txtOrigem.Text.Contains(".zip") || txtOrigem.Text.Contains(".css") || txtOrigem.Text.Contains(".exe")
                   || txtOrigem.Text.Contains(".js") || txtOrigem.Text.Contains(".svg") || txtOrigem.Text.Contains(".sql") || txtOrigem.Text.Contains(".sln") || txtOrigem.Text.Contains(".resx") || txtOrigem.Text.Contains(".cs"))
@@ -108,11 +111,12 @@ namespace Migração
             else
                 CopiarPasta(txtOrigem.Text, txtDestino.Text, true);
         }
+        #endregion
 
-        //Criando método copiar pasta:
+        #region Método cópia pastas e subpastas
         private void CopiarPasta(string sourceDirName, string destDirName, bool copySubDirs)
         {
-            { 
+            {
                 var dir = new DirectoryInfo(sourceDirName);
                 var dirs = dir.GetDirectories();
 
@@ -163,7 +167,9 @@ namespace Migração
                 toolStripStatusLabel1.Text = "Pronto " + dirs.Count() + " subpastas copiadas!";
             }
         }
+        #endregion
 
+        #region Move Arquivos
         private void cmdMover_Click(object sender, EventArgs e)
         {
             try
@@ -176,6 +182,8 @@ namespace Migração
                 MessageBox.Show("Falha: " + ex.Message);
             }
         }
+        #endregion
+
 
         private void txtDestino_DoubleClick(object sender, EventArgs e)
         {
@@ -236,6 +244,16 @@ namespace Migração
                 txtDestino.Text = "Dois cliques para escolher diretório";
                 txtDestino.ForeColor = Color.Silver;
             }
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Migração
             this.Close();
             Migração abre = new Migração();
             abre.ShowDialog();
+            this.Hide();
         }
 
         private void cmdCopiarArquivo_Click(object sender, EventArgs e)
